@@ -18,8 +18,11 @@ main :: proc() {
 		defer rl.EndDrawing()
 		rl.ClearBackground(rl.RAYWHITE)
 
-		if rl.GuiButton({50, 50, 200, 50}, "Bb -> C") {
-			Bb_to_C()
+		if rl.GuiButton({50, 50, 95, 50}, "Bb -> C (#)") {
+			Bb_to_C_sharp()
+		}
+		if rl.GuiButton({155, 50, 95, 50}, "Bb -> C (b)") {
+			Bb_to_C_flat()
 		}
 		if rl.GuiButton({50, 150, 200, 50}, "C -> Bb") {
 			C_to_Bb()
@@ -31,7 +34,7 @@ main :: proc() {
 }
 
 //升高2个半音
-Bb_to_C :: proc() {
+Bb_to_C_sharp :: proc() {
 	clip := clipboard
 	clip, _ = strings.replace_all(clip, "#1", "#d ")
 	clip, _ = strings.replace_all(clip, "#2", "f ")
@@ -69,6 +72,13 @@ Bb_to_C :: proc() {
 	rl.SetClipboardText(strings.clone_to_cstring(clip))
 }
 
+// TODO
+Bb_to_C_flat :: proc() {
+	clip := clipboard
+
+	fmt.println(clip)
+	rl.SetClipboardText(strings.clone_to_cstring(clip))
+}
 //降低2个半音
 C_to_Bb :: proc() {}
 
