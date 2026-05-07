@@ -1,0 +1,7 @@
+- [x] Bb -> C (#)
+- [x] Bb -> C (b)
+- [x] C -> Bb (#)
+- [x] C -> Bb (b)
+- [ ] # -> b
+- [ ] b -> #
+- [ ] number -> lilypond
