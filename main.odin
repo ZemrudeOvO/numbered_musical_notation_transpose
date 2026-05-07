@@ -179,6 +179,8 @@ C_to_Bb_sharp :: proc() {
 
 	clip, _ = strings.replace_all(clip, ", \'", "")
 	clip, _ = strings.replace_all(clip, "\' ,", "")
+	clip, _ = strings.replace_all(clip, ", , \' \'", "")
+	clip, _ = strings.replace_all(clip, "\' \' , ,", "")
 
 	fmt.println(clip)
 	rl.SetClipboardText(strings.clone_to_cstring(clip))
